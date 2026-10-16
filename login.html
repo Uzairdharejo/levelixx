@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Log in – Levelixx</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="site.css"></head>
+<body>
+<div class="wrap" data-page>
+  <header class="bar">
+    <a class="brand" href="index.html" aria-label="Levelixx Game Boosting"><span class="mark" aria-hidden="true">LX</span><span><b>Levelixx</b><small>Game Boosting</small></span></a>
+    <nav aria-label="Pages"><a href="index.html">Home</a><a href="games.html">Games</a><a href="order.html">Order</a><a href="faq.html">FAQ</a></nav>
+    <div class="auth" id="authSlot"></div>
+  </header>
+<div class="authwrap"><div class="card authcard">
+      <h1>Log in</h1>
+      <p class="sub">Welcome back. Log in to place orders faster.</p>
+      <div id="msg" role="alert" hidden></div>
+      <form id="loginForm" novalidate>
+        <label for="lEmail">Email<input id="lEmail" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        <label for="lPass">Password<input id="lPass" type="password" autocomplete="current-password" required placeholder="Your password"></label>
+        <button class="btn" type="submit">Log in</button>
+      </form>
+      <p class="alt"><button type="button" class="linkbtn" id="forgot" style="padding:0;color:var(--steel);font-weight:600">Forgot password?</button></p>
+      <p class="alt">New here? <a href="signup.html">Create an account</a></p>
+    </div></div>
+  <footer>
+    <div><b>LEVELIXX</b> Game Boosting</div>
+    <div>Elite services / LX-Core / Est. 2023</div>
+  </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.min.js"></script>
+<script src="site.js"></script>
+</body></html>

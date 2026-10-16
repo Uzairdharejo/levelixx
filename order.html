@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Place an Order – Levelixx</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="site.css"></head>
+<body>
+<div class="wrap" data-page>
+  <header class="bar">
+    <a class="brand" href="index.html" aria-label="Levelixx Game Boosting"><span class="mark" aria-hidden="true">LX</span><span><b>Levelixx</b><small>Game Boosting</small></span></a>
+    <nav aria-label="Pages"><a href="index.html">Home</a><a href="games.html">Games</a><a href="order.html" class="on" aria-current="page">Order</a><a href="faq.html">FAQ</a></nav>
+    <div class="auth" id="authSlot"></div>
+  </header>
+  <section id="order">
+    <div class="eyebrow">Place an order</div>
+    <h2>Build your order</h2>
+    <p class="lede">Fill in the details, then pay securely with PayPal or card. We start after your payment arrives.</p>
+    <p class="hint" id="loginHint" hidden><a href="login.html">Log in</a> or <a href="signup.html">sign up</a> first, so we can match your payment to your order.</p>
+    <div class="order">
+      <div class="card">
+        <form id="orderForm" autocomplete="off">
+          <div class="row2">
+            <label for="fGame">Game<select id="fGame"></select></label>
+            <label for="fSvc">Service<select id="fSvc"></select></label>
+          </div>
+          <div class="row2" id="rankRow">
+            <label for="fFrom">Current rank / level<input id="fFrom" type="text" placeholder="e.g. Platinum 2"></label>
+            <label for="fTo">Wanted rank / level<input id="fTo" type="text" placeholder="e.g. Diamond 1"></label>
+          </div>
+          <div class="row2">
+            <label for="fPid">Player ID / in-game name<input id="fPid" type="text" placeholder="e.g. 5123456789"></label>
+            <label for="fQty">Quantity (ranks, matches or bundles)<input id="fQty" type="number" min="1" max="99" value="1" inputmode="numeric"></label>
+          </div>
+          <div class="row2">
+            <label for="fName">Your name<input id="fName" type="text" placeholder="Name"></label>
+            <label for="fPlat">Platform<select id="fPlat"><option>Mobile</option><option>PC</option><option>Console</option></select></label>
+          </div>
+          <label for="fNote">Notes (optional)<textarea id="fNote" placeholder="Preferred play hours, region, anything we should know"></textarea></label>
+          <p class="hint" style="margin:0">Never type your game password here. For boosting we ask for login details only after your order is confirmed.</p>
+        </form>
+        <div class="done" id="doneBox" hidden>
+          <h3>Payment received</h3>
+          <p>Your order code is <b class="code"></b>. We have saved your order and will start once your payment is checked. Keep this code if you need to contact us.</p>
+          <a class="btn" href="games.html">Back to games</a>
+        </div>
+      </div>
+      <aside class="card summary" aria-live="polite">
+        <h3>Order summary</h3>
+        <dl>
+          <div><dt>Game</dt><dd id="sGame">–</dd></div>
+          <div><dt>Service</dt><dd id="sSvc">–</dd></div>
+          <div><dt>Climb</dt><dd id="sClimb">–</dd></div>
+        </dl>
+        <div class="total"><span>Total</span><b id="sPrice">–</b></div>
+        <p class="numline" id="sDisc" hidden></p>
+        <p class="numline" id="sUsd"></p>
+        <div id="payBox" class="paybox">
+          <div id="paypalBtns"></div>
+          <button class="btn" id="stripeBtn" type="button">Pay by card</button>
+          <div id="payMsg" role="alert" hidden></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <footer>
+    <div><b>LEVELIXX</b> Game Boosting</div>
+    <div>Elite services / LX-Core / Est. 2023</div>
+  </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.min.js"></script>
+<script src="site.js"></script>
+</body></html>

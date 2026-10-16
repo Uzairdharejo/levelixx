@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Staff – Levelixx</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="site.css"></head>
+<body>
+<div class="wrap" data-page>
+  <header class="bar">
+    <a class="brand" href="index.html" aria-label="Levelixx Game Boosting"><span class="mark" aria-hidden="true">LX</span><span><b>Levelixx</b><small>Game Boosting</small></span></a>
+    <nav aria-label="Pages"><a href="index.html">Home</a><a href="games.html">Games</a><a href="order.html">Order</a><a href="faq.html">FAQ</a></nav>
+    <div class="auth" id="authSlot"></div>
+  </header>
+  <section id="adminRoot" class="pagehead">
+    <div class="eyebrow">Staff only</div>
+    <h2>Customers and orders</h2>
+    <div id="adminMsg" role="alert" hidden style="margin-top:14px"></div>
+    <div id="adminBody" hidden>
+      <div class="tiles" id="tiles"></div>
+
+      <h3 class="sect">Customers</h3>
+      <div class="filters">
+        <label for="cSearch">Search<input id="cSearch" type="search" placeholder="Name, email or number"></label>
+        <label for="minSpend">Spent at least (USD)<input id="minSpend" type="number" min="0" value="0" inputmode="decimal"></label>
+      </div>
+      <p class="numline" id="custCount"></p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Customer</th><th>Email</th><th>Orders</th><th>Spent</th><th>Discount</th><th></th></tr></thead>
+        <tbody id="custBody"></tbody>
+      </table></div>
+
+      <h3 class="sect">Offers and emails</h3>
+      <div class="card tools">
+        <p>These tools use the customers shown above. Filter first, for example everyone who spent at least 50 USD.</p>
+        <div class="toolrow">
+          <label for="bulkPct">Discount %<input id="bulkPct" type="number" min="0" max="90" value="10" inputmode="numeric"></label>
+          <button class="btn" id="bulkDisc" type="button">Give discount to shown customers</button>
+        </div>
+        <div class="toolrow">
+          <button class="btn ghost" id="copyEmails" type="button">Copy emails of shown customers</button>
+        </div>
+        <label for="emailBox">Email list<textarea id="emailBox" readonly placeholder="Emails appear here after you tap Copy"></textarea></label>
+        <p class="numline" id="toolMsg" role="status"></p>
+        <p class="numline">Each customer row also has an Email link that opens your email app with an offer message already written.</p>
+      </div>
+
+      <h3 class="sect">Orders</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Code</th><th>Date</th><th>Customer</th><th>Order</th><th>Amount</th><th>Paid by</th><th>Status</th></tr></thead>
+        <tbody id="ordBody"></tbody>
+      </table></div>
+      <p class="numline">Customers count toward Spent once an order is marked paid, in progress or done. Check the money arrived in PayPal or Stripe before you mark an order paid.</p>
+    </div>
+  </section>
+  <footer>
+    <div><b>LEVELIXX</b> Game Boosting</div>
+    <div>Elite services / LX-Core / Est. 2023</div>
+  </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.min.js"></script>
+<script src="site.js"></script>
+</body></html>
